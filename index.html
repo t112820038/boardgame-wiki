@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>開局前 3 分鐘：桌遊規則速查 Wiki</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="./index.html" class="brand">🎲 開局前 3 分鐘：桌遊規則速查 Wiki</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <h1>開局前 3 分鐘，快速搞懂規則！</h1>
+      <p>拒絕冗長說明書！收錄經典派對與策略桌遊的勝利條件、回合流程與新手最易忘細節。</p>
+    </section>
+
+    <section class="filter-bar" aria-label="搜尋與分類篩選">
+      <input
+        type="text"
+        id="searchInput"
+        class="search-box"
+        placeholder="輸入桌遊名稱、機制或關鍵字（例如：狼人殺、投票、秘密身分）..."
+        aria-label="搜尋桌遊"
+      >
+      <div class="tag-filters">
+        <span class="filter-label">機制篩選：</span>
+        <button type="button" class="tag-btn active" data-tag="all">全部遊戲</button>
+        <button type="button" class="tag-btn" data-tag="陣營推理">#陣營推理</button>
+        <button type="button" class="tag-btn" data-tag="秘密身分">#秘密身分</button>
+        <button type="button" class="tag-btn" data-tag="嘴砲交涉">#嘴砲交涉</button>
+        <button type="button" class="tag-btn" data-tag="手牌管理">#手牌管理</button>
+      </div>
+    </section>
+
+    <section class="game-grid" id="gameGrid">
+      <!-- 狼人殺 -->
+      <a href="./games/werewolf.html" class="game-card" data-title="狼人殺 The Werewolves of Millers Hollow" data-tags="陣營推理,秘密身分,嘴砲交涉">
+        <div>
+          <h2>狼人殺</h2>
+          <span class="en-title">The Werewolves of Millers Hollow</span>
+          <p class="summary">天黑請閉眼！透過夜間神職資訊與白天發言邏輯，找出潛伏在村莊裡的狼人並投票放逐。</p>
+          <div class="card-meta">
+            <span class="badge">👥 6–18 人</span>
+            <span class="badge">⏱️ 20–45 分鐘</span>
+            <span class="badge badge-tag">#陣營推理</span>
+            <span class="badge badge-tag">#秘密身分</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span>難度：★★☆☆☆</span>
+          <span>查看速查規則 →</span>
+        </div>
+      </a>
+
+      <!-- 矮人礦坑 -->
+      <a href="./games/saboteur.html" class="game-card" data-title="矮人礦坑 Saboteur" data-tags="陣營推理,秘密身分,手牌管理">
+        <div>
+          <h2>矮人礦坑</h2>
+          <span class="en-title">Saboteur</span>
+          <p class="summary">大家一起合作挖金礦——但隊伍裡混入了搞破壞的壞矮人！打通坑道或破壞工具全在一念之間。</p>
+          <div class="card-meta">
+            <span class="badge">👥 3–10 人</span>
+            <span class="badge">⏱️ 30 分鐘</span>
+            <span class="badge badge-tag">#秘密身分</span>
+            <span class="badge badge-tag">#手牌管理</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span>難度：★☆☆☆☆</span>
+          <span>查看速查規則 →</span>
+        </div>
+      </a>
+
+      <!-- 阿瓦隆 -->
+      <a href="./games/avalon.html" class="game-card" data-title="阿瓦隆 The Resistance: Avalon" data-tags="陣營推理,秘密身分,嘴砲交涉">
+        <div>
+          <h2>阿瓦隆</h2>
+          <span class="en-title">The Resistance: Avalon</span>
+          <p class="summary">零淘汰制陣營推理經典！梅林開局就知道所有壞人，但必須隱藏身分引導好人完成三次任務。</p>
+          <div class="card-meta">
+            <span class="badge">👥 5–10 人</span>
+            <span class="badge">⏱️ 30 分鐘</span>
+            <span class="badge badge-tag">#陣營推理</span>
+            <span class="badge badge-tag">#嘴砲交涉</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span>難度：★★☆☆☆</span>
+          <span>查看速查規則 →</span>
+        </div>
+      </a>
+    </section>
+
+    <div id="noResults" class="no-results">
+      找不到符合條件的桌遊，試試清除搜尋關鍵字或切換其他分類標籤吧！
+    </div>
+  </main>
+
+  <footer class="footer">
+    開局前 3 分鐘：桌遊規則速查 Wiki &middot; 專為快速開局打造的輕量知識庫
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>

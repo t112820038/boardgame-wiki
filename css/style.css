@@ -1,0 +1,444 @@
+:root {
+  --bg-main: #F7F3E9;
+  --bg-card: #FFFFFF;
+  --primary: #2C3E50;
+  --primary-light: #34495E;
+  --accent-good: #27AE60;
+  --accent-good-bg: #EAFAF1;
+  --accent-evil: #C0392B;
+  --accent-evil-bg: #FDEDEC;
+  --accent-gold: #D4AC0D;
+  --border-wood: #D5C7A9;
+  --text-main: #333333;
+  --text-muted: #666666;
+  --shadow-sm: 0 2px 8px rgba(44, 62, 80, 0.08);
+  --shadow-md: 0 6px 18px rgba(44, 62, 80, 0.12);
+  --radius-card: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.65;
+  padding-bottom: 3rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 導覽列 */
+.navbar {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  padding: 1rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.back-link {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.back-link:hover {
+  background-color: rgba(255, 255, 255, 0.28);
+}
+
+/* 主容器 */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+}
+
+/* 首頁 Hero 與搜尋篩選區 */
+.hero {
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
+}
+
+.hero h1 {
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.filter-bar {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-wood);
+  border-radius: var(--radius-card);
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.search-box {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--border-wood);
+  border-radius: 8px;
+  background-color: #FAF8F3;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+  transition: border-color 0.2s;
+}
+
+.search-box:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: #FFFFFF;
+}
+
+.tag-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.filter-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-right: 0.25rem;
+}
+
+.tag-btn {
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-wood);
+  color: var(--primary);
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tag-btn:hover {
+  border-color: var(--primary);
+}
+
+.tag-btn.active {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+}
+
+/* 首頁遊戲卡片網格 */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.game-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-wood);
+  border-radius: var(--radius-card);
+  padding: 1.4rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.game-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.game-card h2 {
+  color: var(--primary);
+  font-size: 1.35rem;
+  margin-bottom: 0.2rem;
+}
+
+.game-card .en-title {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin-bottom: 0.85rem;
+  display: block;
+}
+
+.game-card .summary {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  background-color: var(--bg-main);
+  color: var(--primary);
+  border: 1px solid var(--border-wood);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge-tag {
+  background-color: #EBF2F7;
+  border-color: #CBDCE8;
+  color: var(--primary);
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border-wood);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-muted);
+  background-color: var(--bg-card);
+  border-radius: var(--radius-card);
+  border: 1px dashed var(--border-wood);
+  display: none;
+}
+
+/* 單一桌遊頁面樣式 */
+.game-header {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-wood);
+  border-radius: var(--radius-card);
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.game-header h1 {
+  color: var(--primary);
+  font-size: 1.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.meta-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.meta-badges .badge {
+  font-size: 0.9rem;
+  padding: 0.3rem 0.75rem;
+}
+
+.wiki-section {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-wood);
+  border-radius: var(--radius-card);
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.wiki-section h2 {
+  color: var(--primary);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--bg-main);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* 區塊一：一句話獲勝條件 */
+.win-condition {
+  border-left: 6px solid var(--accent-good);
+}
+
+.faction-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.faction-box {
+  padding: 1rem 1.15rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+.faction-good {
+  background-color: var(--accent-good-bg);
+  border-color: #A9DFBF;
+}
+
+.faction-good h3 {
+  color: var(--accent-good);
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+}
+
+.faction-evil {
+  background-color: var(--accent-evil-bg);
+  border-color: #F5B7B1;
+}
+
+.faction-evil h3 {
+  color: var(--accent-evil);
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+}
+
+/* 區塊二與三：清單與流程 */
+.wiki-list {
+  padding-left: 1.35rem;
+}
+
+.wiki-list li {
+  margin-bottom: 0.6rem;
+}
+
+.wiki-list li:last-child {
+  margin-bottom: 0;
+}
+
+.phase-step {
+  background-color: #FAF8F3;
+  border: 1px solid var(--border-wood);
+  border-radius: 8px;
+  padding: 1rem 1.15rem;
+  margin-bottom: 0.85rem;
+}
+
+.phase-step:last-child {
+  margin-bottom: 0;
+}
+
+.phase-title {
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.35rem;
+  font-size: 1.05rem;
+}
+
+/* 區塊四：新手易忘紅框提醒 */
+.faq-alert {
+  background-color: var(--accent-evil-bg);
+  border: 2px solid var(--accent-evil);
+}
+
+.faq-alert h2 {
+  color: var(--accent-evil);
+  border-bottom-color: rgba(192, 57, 43, 0.2);
+}
+
+.faq-alert .wiki-list li strong {
+  color: var(--accent-evil);
+}
+
+/* 區塊五：相似機制推薦 */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.related-card {
+  display: block;
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-wood);
+  border-radius: 10px;
+  padding: 1rem 1.15rem;
+  transition: all 0.2s;
+}
+
+.related-card:hover {
+  background-color: #FFFFFF;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.related-card h3 {
+  color: var(--primary);
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+
+.related-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* 頁尾 */
+.footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 600px) {
+  .navbar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+  .game-header, .wiki-section {
+    padding: 1.25rem;
+  }
+}
